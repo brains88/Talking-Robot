@@ -1,0 +1,141 @@
+html, body {
+  background: #247;
+  overflow: hidden;
+}
+
+.a11y-hidden {
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  left: -1000in;
+}
+
+.face {
+  position: relative;
+  width: 1.25in;
+  height: 1.25in;
+  overflow: hidden;
+  margin: 5vh auto 0 auto;
+  background: #fff;
+  border-radius: 100% / 30% 30% 60% 60%;
+}
+
+@keyframes blink {
+  0%, 5%, 100% { height: 15%; }
+  2% { height: 0; }
+}
+
+.eye {
+  position: absolute;
+  top: 48%;
+  left: 25%;
+  width: 15%;
+  height: 15%;
+  background: black;
+  background-image: radial-gradient(circle at 30% 25%, white 15%, transparent 0);
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  animation: blink 8s infinite;
+}
+
+.eye + .eye {
+  left: 60%;
+  background-image: radial-gradient(circle at 70% 25%, white 15%, transparent 0);
+  transform: scaleX(-1) translate(0, -50%);
+}
+
+@keyframes talk {
+  0%, 100% { height: 12%; }
+  50% { height: 6%; }
+}
+
+
+.mouth {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  width: 10%;
+  height: 12%;
+  background: black;
+  border-radius: 0 0 0.125in 0.1251in;
+  transition: height 0.25s;
+}
+
+.mouth.talking {
+  animation: talk 1s infinite;
+}
+
+
+/* * * * */
+.to-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: transform 0.5s;
+}
+
+.hidden {
+  transform: translateY(50vh);
+}
+
+button {
+  margin: 0.5rem;
+  min-width: 7rem;
+  height: 3.5rem;
+  border: 0;
+  border-radius: 0.2rem 0.2rem 0.4rem 0.4rem;
+  background: linear-gradient(#dde, #bbd);
+  border-bottom: 0.25rem solid #aab;
+  box-shadow: inset 0 0 2px #ddf, inset 0 -1px 2px #ddf;
+  color: #247;
+  font-size: 1rem;
+  text-shadow: 1px 1px 1px #fff;
+  box-sizing: content-box;
+  transition: border-bottom 0.25s;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+button:active {
+  border-bottom: 0;
+}
+
+#subtitles {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-family: Helvetica, Arial, sans-serif;
+  bottom: 16vh;
+}
+
+#trivia section {
+  width: 80vw;
+}
+
+#trivia h2 {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+#trivia .options {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#trivia .options button {
+  flex: 1;
+  min-width: 40%;
+}

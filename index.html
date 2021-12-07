@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Robot</title>
+  <link rel="stylesheet" type="text/css" href="robot.css">
+</head>
+<body>
+<div class="face">
+  <div class="eye"></div>
+  <div class="eye"></div>
+  <div class="mouth"></div>
+</div>
+
+<div id="menu" class="to-bottom">
+  <button onclick="tellJoke()">Jokes</button>
+  <button onclick="askTrivia()">Trivia</button>
+  <button onclick="askFlag()">Flags</button>
+</div>
+
+<div id="trivia" class="to-bottom hidden">
+  <section>
+    <h2></h2>
+    <div class="options">
+      <button onclick="answerTrivia(0)"></button>
+      <button onclick="answerTrivia(1)"></button>
+      <button onclick="answerTrivia(2)"></button>
+      <button onclick="answerTrivia(3)"></button>
+    </div>
+  </section>
+</div>
+
+<div id="subtitles" class="to-bottom"></div>
+<script type="text/javascript" src="robot.js"></script>
+</body>
+</html>
